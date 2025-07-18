@@ -73,8 +73,11 @@ namespace BankingSystemCS {
 
                 if (UserLoginRegister.RegisterUser(username, password, email)) {
                     Console.WriteLine("Registration successful!");
+                    int UserID = UserLoginRegister.AuthenticateUser(username, password);
 
-                    User user1 = new User(1, username, 0, 0, 0);
+                    User user1 = new User(UserID, username, 0, 0, 0);
+                    Console.WriteLine(user1);
+                    
                 }
             }
 
