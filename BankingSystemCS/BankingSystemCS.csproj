@@ -44,11 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bank.cs" />
-    <Compile Include="DatabaseHelper.cs" />
+    <Compile Include="DatabaseServices\DatabaseHelper.cs" />
+    <Compile Include="DatabaseServices\UserDatabaseConfigs.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserCS\User.cs" />
-    <Compile Include="UserCS\UserLoginRegister.cs" />
+    <Compile Include="DatabaseServices\UserLoginRegister.cs" />
     <Compile Include="Vault.cs" />
     <Compile Include="VaultItems\AssetsPaper.cs" />
     <Compile Include="VaultItems\AssetsLand.cs" />

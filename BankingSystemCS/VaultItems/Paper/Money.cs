@@ -10,7 +10,7 @@ namespace BankingSystemCS.VaultItems.Paper {
 
         public double Amount { get; set; }
 
-        public Money(int Amount) {
+        public Money(double Amount) {
             this.Amount = Amount;
         }
 

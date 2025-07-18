@@ -13,17 +13,15 @@ namespace BankingSystemCS {
 
         private UserLoginRegister UserLoginRegister = new UserLoginRegister();
 
-        private double changeMoney(User usr, double Amount) {
+        private void changeMoney(User user, double Amount) {
             if (Amount >= 0) {
-                Amount = usr.Money.Amount;
+                user.GetAssetsPaper().SetMoneyAmount(Amount);
+                Console.WriteLine($"Your New Balance is: {user.GetAssetsPaper().GetMoneyAmount()}");
             }
             else {
+                Console.WriteLine($"You Will Be In Debt, Your New Balance is: {user.GetAssetsPaper().GetMoneyAmount()}");
 
             }
-
-            return usr.Money.Amount;
-
-
         }
 
 
@@ -49,8 +47,8 @@ namespace BankingSystemCS {
 
                 if (UserID >= 0) {
                     Console.WriteLine("Login successful!");
-                    UserLoginRegister.setUserID(UserID);
-                    User user1 = new User(UserID, username, 0, 0, 0);
+                    UserLoginRegister.SetUserID(UserID);
+                    User user1 = new User(UserID);
 
                     Console.WriteLine(user1);
                 }
@@ -75,7 +73,7 @@ namespace BankingSystemCS {
                     Console.WriteLine("Registration successful!");
                     int UserID = UserLoginRegister.AuthenticateUser(username, password);
 
-                    User user1 = new User(UserID, username, 0, 0, 0);
+                    User user1 = new User(UserID);
                     Console.WriteLine(user1);
                     
                 }

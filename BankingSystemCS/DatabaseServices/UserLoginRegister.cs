@@ -72,7 +72,7 @@ namespace BankingSystemCS.userCS {
         //NEW USER REGISTERATION
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         //USERID SETTER
-        public static void setUserID(int ID) {
+        public static void SetUserID(int ID) {
             UserID = ID;
         }
         //USERID SETTER

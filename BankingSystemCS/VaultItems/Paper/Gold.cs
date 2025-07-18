@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace BankingSystemCS.VaultItems.Paper {
     internal class Gold {
-        private int Amount { get; set; }
-        private int Price { get; set; }
+        public double Amount { get; set; }
+        public double Price { get; set; }
 
-        public Gold(int Amount, int Price) {
+        public Gold(int Amount, double Price) {
             this.Amount = Amount;
             this.Price = Price;
         }
