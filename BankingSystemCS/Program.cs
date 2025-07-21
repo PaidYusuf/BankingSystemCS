@@ -18,20 +18,20 @@ namespace BankingSystemCS {
 
 
 
-        private void changeMoney(User user, double Amount) {
-            if (Amount >= 0) {
-                user.GetAssetsPaper().SetMoneyAmount(Amount);
-                Console.WriteLine($"Your New Balance is: {user.GetAssetsPaper().GetMoneyAmount()}");
-            }
-            else {
-                Console.WriteLine($"You Will Be In Debt, Your New Balance is: {user.GetAssetsPaper().GetMoneyAmount()}");
+        //private void ChangeMoney(User user, double Amount) {
+        //    if (Amount >= 0) {
+        //        user.GetAssetsPaper().SetMoneyAmount(Amount);
+        //        Console.WriteLine($"Your New Balance is: {user.GetAssetsPaper().GetMoneyAmount()}");
+        //    }
+        //    else {
+        //        Console.WriteLine($"You Will Be In Debt, Your New Balance is: {user.GetAssetsPaper().GetMoneyAmount()}");
 
-            }
-        }
+        //    }
+        //}
 
-        private static void login() {
+        private static void Login() {
             if (!LoginRegisterPage.LoginOrRegister(LoginRegisterPage.LoginString())) {
-                login();
+                Login();
             }
         }
 
@@ -41,12 +41,10 @@ namespace BankingSystemCS {
             Console.WriteLine("Welcome To The Banking System\n" +
                 "Made by Yusuf");
 
-            login();
+            Login();
 
 
             Console.WriteLine("End Of Program!!");
-
-
             Console.ReadLine();
 
         }

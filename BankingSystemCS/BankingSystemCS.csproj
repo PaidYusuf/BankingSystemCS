@@ -48,6 +48,7 @@
     <Compile Include="DatabaseServices\UserDatabaseConfigs.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserCS\AdminPanel.cs" />
     <Compile Include="UserCS\LoginRegisterPage.cs" />
     <Compile Include="UserCS\User.cs" />
     <Compile Include="DatabaseServices\UserLoginRegister.cs" />

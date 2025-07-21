@@ -16,9 +16,11 @@ namespace BankingSystemCS {
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         //USER INFORMATIONS
-        protected int UserID { get; set; }
-        protected String UserName { get; set; }
+        public int UserID { get; set; }
+        public String UserName { get; set; }
         protected Bank UserBank { get; set; }
+        public DateTime DateCreated { get; set; }
+        public bool IsAdmin { get; set; }
         //protected String Password { get; set; }
         //protected String UserEmail { get; set; }
         //protected String UserPhone { get; set; }
@@ -53,7 +55,7 @@ namespace BankingSystemCS {
 
         //CONSTRUCTER
 
-        //public User() { }
+        public User() { }
 
         //public User(int UserID, String UserName, int GAmount, int GPrice, int MAmount) {
         //    this.UserID = UserID;
