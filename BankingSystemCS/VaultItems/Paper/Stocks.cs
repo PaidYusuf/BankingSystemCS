@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace BankingSystemCS.VaultItems.Paper {
     internal class Stock {
-        private int stockID { get; set; }
-        public string stockName { get; private set; }
-        private double stockPrice { get; set; }
+        private int StockID { get; set; }
+        public string StockName { get; private set; }
+        private double StockPrice { get; set; }
 
         public Stock(string stockName, double StockPrice) {
 
-            this.stockName = stockName;
-            this.stockPrice = StockPrice;
+            this.StockName = stockName;
+            this.StockPrice = StockPrice;
         }
 
 

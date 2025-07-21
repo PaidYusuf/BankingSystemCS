@@ -1,4 +1,5 @@
 ﻿using BankingSystemCS.userCS;
+using BankingSystemCS.UserCS;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -10,84 +11,40 @@ using System.Threading.Tasks;
 
 namespace BankingSystemCS {
     internal class Program {
-
+        //SERVICES
         private UserLoginRegister UserLoginRegister = new UserLoginRegister();
+        private LoginRegisterPage LoginRegisterPage = new LoginRegisterPage();
+        //SERVICES
 
-        private double changeMoney(User usr, double Amount) {
-            if (Amount >= 0) {
-                Amount = usr.Money.Amount;
+
+
+        //private void ChangeMoney(User user, double Amount) {
+        //    if (Amount >= 0) {
+        //        user.GetAssetsPaper().SetMoneyAmount(Amount);
+        //        Console.WriteLine($"Your New Balance is: {user.GetAssetsPaper().GetMoneyAmount()}");
+        //    }
+        //    else {
+        //        Console.WriteLine($"You Will Be In Debt, Your New Balance is: {user.GetAssetsPaper().GetMoneyAmount()}");
+
+        //    }
+        //}
+
+        private static void Login() {
+            if (!LoginRegisterPage.LoginOrRegister(LoginRegisterPage.LoginString())) {
+                Login();
             }
-            else {
-
-            }
-
-            return usr.Money.Amount;
-
-
         }
 
 
 
-
         static void Main(string[] args) {
+            Console.WriteLine("Welcome To The Banking System\n" +
+                "Made by Yusuf");
 
-
-            Console.WriteLine("Hello! Please press 1 or 2.\n" +
-                "1 -| Sign in\n" +
-                "2 -| Sign up");
-
-            string choice = Console.ReadLine();
-
-            if (choice == "1") {
-                Console.Write("Username: ");
-                string username = Console.ReadLine();
-
-                Console.Write("Password: ");
-                string password = Console.ReadLine();
-
-                int UserID = UserLoginRegister.AuthenticateUser(username, password);
-
-                if (UserID >= 0) {
-                    Console.WriteLine("Login successful!");
-                    UserLoginRegister.setUserID(UserID);
-                    User user1 = new User(UserID, username, 0, 0, 0);
-
-                    Console.WriteLine(user1);
-                }
-
-
-
-                else
-                    Console.WriteLine("Invalid credentials");
-            }
-
-            else if (choice == "2") {
-                Console.Write("Username: ");
-                string username = Console.ReadLine();
-
-                Console.Write("Password: ");
-                string password = Console.ReadLine();
-
-                Console.Write("Email: ");
-                string email = Console.ReadLine();
-
-                if (UserLoginRegister.RegisterUser(username, password, email)) {
-                    Console.WriteLine("Registration successful!");
-
-                    User user1 = new User(1, username, 0, 0, 0);
-                }
-            }
-
-
-
-
-
-
+            Login();
 
 
             Console.WriteLine("End Of Program!!");
-
-
             Console.ReadLine();
 
         }

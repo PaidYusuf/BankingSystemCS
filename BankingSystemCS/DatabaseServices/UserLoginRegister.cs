@@ -22,14 +22,11 @@ namespace BankingSystemCS.userCS {
         //USER LOGIN AUTHENTICATION
         public static int AuthenticateUser(string username, string password) {
             string hashedPassword = HashPassword(password);
-
             string query = "SELECT UserID FROM Users WHERE Username = @Username AND Password = @Password";
-
             SqlParameter[] parameters = {
-        new SqlParameter("@Username", username),
-        new SqlParameter("@Password", hashedPassword)
-    };
-
+                new SqlParameter("@Username", username),
+                new SqlParameter("@Password", hashedPassword)
+            };
             using (var reader = DatabaseHelper.ExecuteReader(query, parameters)) {
                 if (reader.Read()) // This checks for rows AND advances to the first record
                 {
@@ -37,8 +34,6 @@ namespace BankingSystemCS.userCS {
                 }
                 return -1; // Authentication failed
             }
-
-
         }
         //USER LOGIN AUTHENTICATION
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -48,25 +43,20 @@ namespace BankingSystemCS.userCS {
                 Console.WriteLine("Username already exists!");
                 return false;
             }
-
             string hashedPassword = HashPassword(password);
-
             string query = @"INSERT INTO Users (Username, Password, Email) 
                     VALUES (@Username, @Password, @Email)";
-
             SqlParameter[] parameters = {
-        new SqlParameter("@Username", username),
-        new SqlParameter("@Password", hashedPassword),
-        new SqlParameter("@Email", email)
-    };
-
+                new SqlParameter("@Username", username),
+                new SqlParameter("@Password", hashedPassword),
+                new SqlParameter("@Email", email)
+            };
             int rowsAffected = DatabaseHelper.ExecuteNonQuery(query, parameters);
             return rowsAffected > 0;
         }
         private static bool UsernameExists(string username) {
             string query = "SELECT 1 FROM Users WHERE Username = @Username";
             SqlParameter parameter = new SqlParameter("@Username", username);
-
             using (var reader = DatabaseHelper.ExecuteReader(query, new[] { parameter })) {
                 return reader.HasRows;
             }
@@ -74,7 +64,7 @@ namespace BankingSystemCS.userCS {
         //NEW USER REGISTERATION
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         //USERID SETTER
-        public static void setUserID(int ID) {
+        public static void SetUserID(int ID) {
             UserID = ID;
         }
         //USERID SETTER
